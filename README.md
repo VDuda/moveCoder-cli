@@ -73,6 +73,22 @@ MoveCoder is configured to use the **x402** model by default for AI generation. 
 ### Payments & Premium Features
 MoveCoder integrates **Coinbase's x402 protocol** to handle payments for premium features, such as high-volume code generation, advanced model access, and specialized template usage. This allows for instant, HTTP-based stablecoin transactions directly within the CLI workflow.
 
+### Authentication
+MoveCoder uses a local server for authentication.
+
+1.  **Start the Auth Server** (in a separate terminal):
+    ```bash
+    movecoder start-server
+    ```
+2.  **Create an Account:**
+    ```bash
+    movecoder signup --email user@example.com --password mysecurepass --name "Dev User"
+    ```
+3.  **Login:**
+    ```bash
+    movecoder login --email user@example.com --password mysecurepass
+    ```
+
 ### Basic Commands
 - **Login:** Authenticate to access protected features.
   ```bash
