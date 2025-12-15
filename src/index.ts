@@ -2,6 +2,7 @@
 import { Command } from 'commander';
 import { CONFIG } from './config.js';
 import { paymentManager } from './x402.js';
+import { generateCode } from './ai.js';
 
 const program = new Command();
 
@@ -34,8 +35,16 @@ program
       process.exit(1);
     }
 
-    // TODO: Implement AI generation logic
-    console.log('Generation starting...');
+    try {
+      console.log('Generation starting...');
+      const code = await generateCode(prompt);
+      console.log('\n--- Generated Move Code ---\n');
+      console.log(code);
+      console.log('\n---------------------------\n');
+    } catch (error: any) {
+      console.error('Error during generation:', error.message);
+      process.exit(1);
+    }
   });
 
 program
