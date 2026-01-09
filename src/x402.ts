@@ -1,14 +1,16 @@
-import { X402Client } from '@coinbase/x402';
+// import { X402Client } from '@coinbase/x402';
 
 export class PaymentManager {
-  private client: X402Client;
+  // private client: X402Client;
 
   constructor() {
     // Initialize the x402 client
     // Note: In a real implementation, we might need configuration here
+    /*
     this.client = new X402Client({
        // Configuration options would go here
     });
+    */
   }
 
   /**

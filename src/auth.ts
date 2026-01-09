@@ -1,4 +1,4 @@
-import Database from "better-sqlite3";
+import { Database } from "bun:sqlite";
 import { betterAuth } from "better-auth";
 import { openAPI } from "better-auth/plugins";
 

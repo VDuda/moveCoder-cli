@@ -1,0 +1,28 @@
+{
+  "id": "movement",
+  "name": "Movement Network",
+  "description": "The Movement Network is a high-performance Layer 1 blockchain powered by the MoveVM.",
+  "documentation": {
+    "sources": [
+      "https://github.com/movementlabsxyz/movement",
+      "https://docs.movementlabs.xyz/"
+    ],
+    "systemPromptExtension": "Use the 'movement' standard library. Ensure strict resource safety. Use 'aptos_framework' where applicable as Movement is compatible with Aptos Move."
+  },
+  "toolchain": {
+    "buildCommand": "movement move build",
+    "testCommand": "movement move test",
+    "deployCommand": "movement move publish --url {network}",
+    "installCommand": "cargo install --git https://github.com/movementlabsxyz/movement movement-cli"
+  },
+  "errorPatterns": [
+    {
+      "pattern": "E04007: undeclared_module",
+      "fixStrategy": "Check imports. Ensure the dependency is defined in Move.toml."
+    },
+    {
+      "pattern": "E06001: unused_value_without_drop",
+      "fixStrategy": "The resource or value does not have the 'drop' ability. Explicitly unpack it or transfer it."
+    }
+  ]
+}
